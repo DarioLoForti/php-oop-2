@@ -5,6 +5,7 @@ class prodotti{
     public $prezzo;
     public $categoria;
     public $tipo;
+    private $codice_prodotto;
 
     function __construct($_nome, $_immagine, $_prezzo, categoria $_categoria, $_tipo) {
         $this->nome = $_nome;
@@ -12,6 +13,15 @@ class prodotti{
         $this->prezzo = $_prezzo;
         $this->categoria = $_categoria;
         $this->tipo = $_tipo;
+        $this->setCodiceProdotto();
+    }
+    private function setCodiceProdotto() {
+        
+        $this->codice_prodotto = rand(1, 999); 
+    }
+
+    public function getCodiceProdotto() {
+        return $this->codice_prodotto;
     }
 
 }
@@ -116,6 +126,7 @@ $prodotti = [
                         <?php } elseif ($prodotto instanceof accessorio && $prodotto->dimensione) { ?>
                             <h5>Dimensione: <?php echo $prodotto->dimensione; ?></h5>
                         <?php } ?>
+                        <h5>Codice Prodotto: <?php echo $prodotto->getCodiceProdotto(); ?></h5>
                     </div>
                 </div>
             </div>
