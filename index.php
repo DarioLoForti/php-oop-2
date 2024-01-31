@@ -4,12 +4,14 @@ class prodotti{
     public $immagine;
     public $prezzo;
     public $categoria;
+    public $tipo;
 
-    function __construct($_nome, $_immagine, $_prezzo, categoria $_categoria) {
+    function __construct($_nome, $_immagine, $_prezzo, categoria $_categoria, $_tipo) {
         $this->nome = $_nome;
         $this->immagine = $_immagine;
         $this->prezzo = $_prezzo;
         $this->categoria = $_categoria;
+        $this->tipo = $_tipo;
     }
 
 }
@@ -23,26 +25,26 @@ class categoria {
 }
 
 class cibo extends prodotti{
-    public $tipo;
-    function __construct($_nome, $_immagine, $_prezzo, $_categoria, $_tipo){
-        parent::__construct($_nome, $_immagine, $_prezzo, $_categoria);
-        $this->tipo = $_tipo;
+    public $gusto;
+    function __construct($_nome, $_immagine, $_prezzo, $_categoria, $_tipo, $_gusto){
+        parent::__construct($_nome, $_immagine, $_prezzo, $_categoria, $_tipo);
+        $this->gusto = $_gusto;
     }
 }
 
 class gioco extends prodotti{
-    public $tipo;
-    function __construct($_nome, $_immagine, $_prezzo, $_categoria, $_tipo){
-        parent::__construct($_nome, $_immagine, $_prezzo, $_categoria);
-        $this->tipo = $_tipo;
+    public $materiale;
+    function __construct($_nome, $_immagine, $_prezzo, $_categoria, $_tipo, $_materiale){
+        parent::__construct($_nome, $_immagine, $_prezzo, $_categoria, $_tipo);
+        $this->materiale = $_materiale;
     }
 }
 
 class accessorio extends prodotti{
-    public $tipo;
-    function __construct($_nome, $_immagine, $_prezzo, $_categoria, $_tipo){
-        parent::__construct($_nome, $_immagine, $_prezzo, $_categoria);
-        $this->tipo = $_tipo;
+    public $dimensione;
+    function __construct($_nome, $_immagine, $_prezzo, $_categoria, $_tipo, $_dimensione){
+        parent::__construct($_nome, $_immagine, $_prezzo, $_categoria, $_tipo);
+        $this->dimensione = $_dimensione;
     }
 }
  // creo oggetti per la classe categoria
@@ -54,20 +56,20 @@ $categoriaPesci = new Categoria("Pesci");
 
 // creo oggetti per la classe cibo
 
-$prodotto1 = new Cibo("Royal Canin Mini Adult", "https://arcaplanet.vtexassets.com/arquivos/ids/284621/Mini-Adult.jpg?v=638182891693570000", "25.99 €", $categoriaCane, "Crocchette");
-$prodotto2 = new Cibo("Almo Nature Holistic Medium Large Tonno e Riso", "https://arcaplanet.vtexassets.com/arquivos/ids/245173/almo-nature-holistic-cane-adult-medium-pollo-e-riso.jpg", "32.99 €", $categoriaCane, "Crocchette");
-$prodotto3 = new Cibo("Almo Nature Cat Daily Lattina", "https://arcaplanet.vtexassets.com/arquivos/ids/245336/almo-daily-menu-cat-400-gr-vitello.jpg", "12.99 €", $categoriaGatto, "carne in scatola");
-$prodotto4 = new Cibo("Mangime per Pesci Guppy in Fiocchi", "https://arcaplanet.vtexassets.com/arquivos/ids/272714/tetra-guppy-mini-flakes.jpg", "5.99€", $categoriaPesci, "Fiocchi");
+$prodotto1 = new Cibo("Royal Canin Mini Adult", "https://arcaplanet.vtexassets.com/arquivos/ids/284621/Mini-Adult.jpg?v=638182891693570000", "25.99 €", $categoriaCane, "Crocchette", "pollo");
+$prodotto2 = new Cibo("Almo Nature Holistic Medium Large Tonno e Riso", "https://arcaplanet.vtexassets.com/arquivos/ids/245173/almo-nature-holistic-cane-adult-medium-pollo-e-riso.jpg", "32.99 €", $categoriaCane, "Crocchette", "tonno e riso");
+$prodotto3 = new Cibo("Almo Nature Cat Daily Lattina", "https://arcaplanet.vtexassets.com/arquivos/ids/245336/almo-daily-menu-cat-400-gr-vitello.jpg", "12.99 €", $categoriaGatto, "carne in scatola", "manzo");
+$prodotto4 = new Cibo("Mangime per Pesci Guppy in Fiocchi", "https://arcaplanet.vtexassets.com/arquivos/ids/272714/tetra-guppy-mini-flakes.jpg", "5.99€", $categoriaPesci, "Fiocchi","alghe");
 
 // creo oggetti per la classe gioco
 
-$prodotto5 = new Gioco("Kong Classic", "https://arcaplanet.vtexassets.com/arquivos/ids/256599/kong-classic1.jpg", "15.99 €", $categoriaCane, "sonaglio");
-$prodotto6 = new Gioco("Topini di peluche Trixie", "https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg", "7.99 €", $categoriaGatto, "peluche");
+$prodotto5 = new Gioco("Kong Classic", "https://arcaplanet.vtexassets.com/arquivos/ids/256599/kong-classic1.jpg", "15.99 €", $categoriaCane, "sonaglio", "plastica morbida");
+$prodotto6 = new Gioco("Topini di peluche Trixie", "https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg", "7.99 €", $categoriaGatto, "peluche", "tessuto");
 
 // creo oggetti per la classe accessorio
 
-$prodotto7 = new Accessorio("Voliera Wilma in Legno", "https://arcaplanet.vtexassets.com/arquivos/ids/258384/voliera-wilma1.jpg", "89.99 €", $categoriaUccelli, "Voliera");
-$prodotto8 = new Accessorio("Cartucce Filtranti per Filtro EasyCrystal", "https://arcaplanet.vtexassets.com/arquivos/ids/272741/tetra-easycrystal-filterpack-250-300.jpg", "8.99 €", $categoriaPesci, "Cartuccia filtrante");
+$prodotto7 = new Accessorio("Voliera Wilma in Legno", "https://arcaplanet.vtexassets.com/arquivos/ids/258384/voliera-wilma1.jpg", "89.99 €", $categoriaUccelli, "Voliera", "158,5L x 67l x 83H cm");
+$prodotto8 = new Accessorio("Cartucce Filtranti per Filtro EasyCrystal", "https://arcaplanet.vtexassets.com/arquivos/ids/272741/tetra-easycrystal-filterpack-250-300.jpg", "8.99 €", $categoriaPesci, "Cartuccia filtrante", "16,69 x 9,19 x 9,19 cm");
 
 // creo array dei prodotti
 $prodotti = [
@@ -107,6 +109,13 @@ $prodotti = [
                         <h5> Prezzo: <?php echo $prodotto->prezzo; ?></h5> 
                         <h5>Adatto per: <?php echo $prodotto->categoria->nome; ?></h5>
                         <h5>Tipologia: <?php echo $prodotto->tipo; ?></h5>
+                        <?php if ($prodotto instanceof cibo && $prodotto->gusto) { ?>
+                            <h5>Gusto: <?php echo $prodotto->gusto; ?></h5>
+                        <?php } elseif ($prodotto instanceof gioco && $prodotto->materiale) { ?>
+                            <h5>Materiale: <?php echo $prodotto->materiale; ?></h5>
+                        <?php } elseif ($prodotto instanceof accessorio && $prodotto->dimensione) { ?>
+                            <h5>Dimensione: <?php echo $prodotto->dimensione; ?></h5>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
