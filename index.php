@@ -5,13 +5,21 @@ class prodotti{
     private $prezzo;
     private $categoria;
 
-    function __construct($_nome, $_immagine, $_prezzo, $_categoria) {
+    function __construct($_nome, $_immagine, $_prezzo, categoria $_categoria) {
         $this->nome = $_nome;
         $this->immagine = $_immagine;
         $this->prezzo = $_prezzo;
         $this->categoria = $_categoria;
     }
 
+}
+
+class Categoria {
+    public $nome;
+
+    public function __construct($_nome) {
+        $this->nome = $_nome;
+    }
 }
 
 class cibo extends prodotti{
@@ -37,4 +45,6 @@ class accessorio extends prodotti{
         $this->tipo = $_tipo;
     }
 }
+
+
 ?>
