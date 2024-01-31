@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body{
+    background-image: url(https://cdn.wallpapersafari.com/51/3/1r4fJi.jpg);
+}
+
+
 .card-img,
 .card-img-top,
 .card-img-bottom {

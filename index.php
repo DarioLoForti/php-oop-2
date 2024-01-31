@@ -99,11 +99,11 @@ $prodotti = [
             <h1>Animal Shop</h1>
         </div>
         <?php foreach ($prodotti as $prodotto) { ?>
-            <div class="col-6 my-5">
+            <div class="col-3 my-5">
                 <div class="card">
                     <img src="<?php echo $prodotto->immagine; ?>" class="card-img-top" alt="<?php echo $prodotto->nome; ?>" >
                     <div class="card-body">
-                        <h2><?php echo $prodotto->nome; ?></h2>
+                        <h3><?php echo $prodotto->nome; ?></h3>
                         <h5> Prezzo: <?php echo $prodotto->prezzo; ?></h5> 
                         <h5>Adatto per: <?php echo $prodotto->categoria->nome; ?></h5>
                         <h5>Tipologia: <?php echo $prodotto->tipo; ?></h5>
