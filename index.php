@@ -14,4 +14,11 @@ class prodotti{
 
 }
 
+class alimento extends prodotti{
+    public $tipo;
+    function __construct($_nome, $_immagine, $_prezzo, $_categoria, $_tipo){
+        parent::__construct($_nome, $_immagine, $_prezzo, $_categoria);
+        $this->tipo = $_tipo;
+    }
+}
 ?>
